@@ -7,9 +7,9 @@ const writeFilePromise = util.promisify(writeFile)
 
 const start = async () => {
     try {
-        const first = await readFilePromise('./content/first.txt','utf8')
-        const second = await readFilePromise('./content/second.txt','utf8')
-        await writeFilePromise('./content/using_promisify_output.txt',
+        const first = await readFilePromise('../content/first.txt','utf8')
+        const second = await readFilePromise('../content/second.txt','utf8')
+        await writeFilePromise('../content/using_promisify_output.txt',
         `This is from 7-using promisify: ${first} ${second}`,
         {flag: 'a'})
         console.log(first,second)
