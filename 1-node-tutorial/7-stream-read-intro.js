@@ -1,6 +1,6 @@
 const {createReadStream} = require('fs')
 
-const stream = createReadStream('./content/big_file.txt')
+const stream = createReadStream('./content/big_file.txt', 'utf8')
 
 //default 64Kb
 //last buffer - remainder
@@ -11,6 +11,7 @@ const stream = createReadStream('./content/big_file.txt')
 stream.on('data', (result) => {
     console.log(result)
 })
+
 stream.on('error', (err) => {
     console.log(err)
 })
